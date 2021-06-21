@@ -3,6 +3,7 @@ import 'package:edgeclass/constants/data.dart';
 import 'package:edgeclass/constants/toast.dart';
 import 'package:edgeclass/constants/video_player/durationConvert.dart';
 import 'package:edgeclass/screens/VideoPage/addnotes.dart';
+import 'package:edgeclass/screens/VideoPage/showNotes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -121,6 +122,8 @@ Widget bulletText(
           showNoteOnly = false;
           await vlcGlobalcontroller.seekTo(_videoDuration);
           await vlcGlobalcontroller.pause();
+          showingNotesDialog(
+              _context, _notes.notes, parseDuration(_notes.duration), true);
         } else
           showToast(_context, "Video not working !!");
       });

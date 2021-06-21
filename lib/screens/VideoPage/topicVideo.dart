@@ -39,7 +39,7 @@ class _TopicVideoPageState extends State<TopicVideoPage> {
   @override
   void initState() {
     databaseHelper.initializeDatabase();
-    dummyInsert();
+    // dummyInsert();
     super.initState();
   }
 

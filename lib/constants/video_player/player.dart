@@ -1,3 +1,4 @@
+import 'package:edgeclass/constants/videPaths.dart';
 import 'package:edgeclass/constants/video_player/vlc_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,9 +17,11 @@ class _PlayerState extends State<Player> {
   void initState() {
     super.initState();
     vlcGlobalcontroller = VlcPlayerController.network(
+      // Constants.elephantDreamStreamUrl,
       widget.fileName,
       hwAcc: HwAcc.FULL,
       autoPlay: true,
+
       options: VlcPlayerOptions(
         advanced: VlcAdvancedOptions([
           VlcAdvancedOptions.networkCaching(2000),

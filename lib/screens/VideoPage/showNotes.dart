@@ -2,7 +2,9 @@ import 'package:edgeclass/constants/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-showingNotesDialog(BuildContext context, String _savedNotes, Duration _seekTo) {
+showingNotesDialog(BuildContext context, String _savedNotes, Duration _seekTo,
+    [bool onClick]) {
+  onClick = onClick ?? false;
   return showDialog(
       barrierDismissible: false,
       context: context,
@@ -16,7 +18,8 @@ showingNotesDialog(BuildContext context, String _savedNotes, Duration _seekTo) {
                           .seekTo(Duration(seconds: _seekTo.inSeconds + 2));
                       Navigator.pop(context);
                       vlcGlobalcontroller.play();
-                      Navigator.pop(context);
+
+                      !onClick ? Navigator.pop(context) : print("");
                     },
                     child: Text(
                       "OK",
