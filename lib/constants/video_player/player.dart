@@ -1,4 +1,3 @@
-import 'package:edgeclass/constants/videPaths.dart';
 import 'package:edgeclass/constants/video_player/vlc_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
