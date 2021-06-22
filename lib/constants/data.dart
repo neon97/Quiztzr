@@ -16,3 +16,4 @@ VlcPlayerController vlcGlobalcontroller;
 Duration vlcPlayedPosition;
 List<Notes> listStopaageDurations = [];
 bool showNoteOnly = true;
+List listQuestions = [];

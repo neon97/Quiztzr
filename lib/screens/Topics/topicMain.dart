@@ -1,5 +1,6 @@
 import 'package:edgeclass/Database/topics.dart';
 import 'package:edgeclass/constants/router.dart';
+import 'package:edgeclass/screens/QuizPage/quizHome.dart';
 import 'package:edgeclass/screens/Topics/topicTile.dart';
 import 'package:edgeclass/screens/videoPage/topicVideo.dart';
 import 'package:edgeclass/widgets.dart/appbackground.dart';
@@ -47,11 +48,11 @@ class _TopicMainState extends State<TopicMain> {
                     return GestureDetector(
                       child: topicTile(_context, index),
                       onTap: () {
-                        routeTo(
-                            context,
-                            TopicVideoPage(
-                              index: index,
-                            ));
+                        routeTo(context, QuixHome()
+                            // TopicVideoPage(
+                            //   index: index,
+                            // )
+                            );
                       },
                     );
                   },
