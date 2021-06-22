@@ -41,9 +41,9 @@
                         }
                     ],
                     "score": 0,
-                    "label": "<p>To ensure all religions are treated the same</p>",
+                    "label": "To ensure all religions are treated the same",
                     "media": null,
-                    "value": 0,
+                    "value": "A",
                     "isCorrect": 0
                 },
                 {
@@ -54,9 +54,9 @@
                         }
                     ],
                     "score": 0,
-                    "label": "<p>To ensure the country does not become a monarchy</p>",
+                    "label": "To ensure the country does not become a monarchy",
                     "media": null,
-                    "value": 1,
+                    "value": "B",
                     "isCorrect": 0
                 },
                 {
@@ -66,10 +66,10 @@
                             "media": null
                         }
                     ],
-                    "score": 2,
-                    "label": "<p>To exercise power on our behalf</p>",
+                    "score": 20,
+                    "label": "To exercise power on our behalf",
                     "media": null,
-                    "value": 2,
+                    "value": "C",
                     "isCorrect": 1
                 },
                 {
@@ -80,9 +80,9 @@
                         }
                     ],
                     "score": 0,
-                    "label": "<p>To draft the constitution of the country</p>",
+                    "label": "To draft the constitution of the country",
                     "media": null,
-                    "value": 3,
+                    "value": "D",
                     "isCorrect": 0
                 }
             ],

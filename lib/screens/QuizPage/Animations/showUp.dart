@@ -20,7 +20,7 @@ class _ShowUpState extends State<ShowUp> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _animController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     final curve =
         CurvedAnimation(curve: Curves.decelerate, parent: _animController);
     _animOffset =
