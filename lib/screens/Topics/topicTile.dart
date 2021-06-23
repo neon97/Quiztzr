@@ -43,17 +43,17 @@ Widget topicTile(BuildContext _context, int _index) {
                 children: [
                   Text(
                     listTopics[_index]["topic"],
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white70),
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white70),
                   ),
                   SizedBox(
                     height: 5,
                   ),
                   Text(
                     listTopics[_index]["description"],
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.white70
-                    ),
+                    style: TextStyle(fontSize: 12, color: Colors.white70),
                   )
                 ],
               ),

@@ -39,3 +39,9 @@
 - the last screen will be summry of quiz 
 - score and time taken for each question
 
+
+
+Tested functionlity
+TESTED OK
+
+

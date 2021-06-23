@@ -1,6 +1,6 @@
 [
     {
-        "instructions": "<p>Select the correct answer.</p>",
+        "instructions": "Select the correct answer.</p>",
         "metadata": {
             "template_reference": "",
             "name": ""
@@ -36,7 +36,7 @@
                 {
                     "feedback": [
                         {
-                            "text": "<p>This is not the reason why we elect our leaders in a democracy.&nbsp;</p>",
+                            "text": "This is not the reason why we elect our leaders in a democracy.</p>",
                             "media": null
                         }
                     ],
@@ -49,7 +49,7 @@
                 {
                     "feedback": [
                         {
-                            "text": "<p>All democratic countries have a constitution that has provisions to protect the basic nature of society.&nbsp;</p>",
+                            "text": "All democratic countries have a constitution that has provisions to protect the basic nature of society.</p>",
                             "media": null
                         }
                     ],
@@ -62,7 +62,7 @@
                 {
                     "feedback": [
                         {
-                            "text": "<p><span style=\"background-color: white; color: rgb(34, 34, 34);\">We choose our leaders during elections so that they may represent our interests in the government and exercise power on our behalf</span></p>",
+                            "text": "<span style=\"background-color: white; color: rgb(34, 34, 34);\">We choose our leaders during elections so that they may represent our interests in the government and exercise power on our behalf</span></p>",
                             "media": null
                         }
                     ],
@@ -75,7 +75,7 @@
                 {
                     "feedback": [
                         {
-                            "text": "<p><span style=\"color: rgb(34, 34, 34); background-color: white;\">Drafting of the Indian </span>Constitution<span style=\"color: rgb(34, 34, 34); background-color: white;\"> was done in 1949. We do not choose our leaders to do a job that was already done.&nbsp;</span></p>",
+                            "text": "<span style=\"color: rgb(34, 34, 34); background-color: white;\">Drafting of the Indian </span>Constitution<span style=\"color: rgb(34, 34, 34); background-color: white;\"> was done in 1949. We do not choose our leaders to do a job that was already done.</span></p>",
                             "media": null
                         }
                     ],
@@ -92,7 +92,7 @@
         },
         "solution": {
             "data": [],
-            "answer": "<p><span style=\"color: rgb(34, 34, 34); background-color: white;\">We choose our leaders during elections so that they may represent our interests in the government and exercise power on our behalf</span></p>",
+            "answer": "<span style=\"color: rgb(34, 34, 34); background-color: white;\">We choose our leaders during elections so that they may represent our interests in the government and exercise power on our behalf</span></p>",
             "step_nav": false,
             "type": "Solution"
         },
@@ -113,7 +113,7 @@
         "widget_type": "response"
     },
     {
-        "instructions": "<p>Select the correct answer.</p>",
+        "instructions": "Select the correct answer.</p>",
         "metadata": {
             "template_reference": "",
             "name": ""
@@ -144,58 +144,58 @@
                 ]
             },
             "solution": {},
-            "stimulus": "<p>Before 2008, which form of government did Nepal have?&nbsp;</p>",
+            "stimulus": "Before 2008, which form of government did Nepal have?",
             "options": [
                 {
                     "feedback": [
                         {
-                            "text": "<p>Nepal was not an oligarchy, which is rule by a small group of influential people.&nbsp;</p>",
+                            "text": "Nepal was not an oligarchy, which is rule by a small group of influential people.",
                             "media": null
                         }
                     ],
                     "score": 0,
-                    "label": "<p>Oligarchy</p>",
+                    "label": "Oligarchy",
                     "media": null,
-                    "value": 0,
+                    "value": "A",
                     "isCorrect": 0
                 },
                 {
                     "feedback": [
                         {
-                            "text": "<p>Nepal was not an aristocracy. Aristocracy is not a form of government. It implies the highest class or nobility in certain societies.</p>",
+                            "text": "Nepal was not an aristocracy. Aristocracy is not a form of government. It implies the highest class or nobility in certain societies.",
                             "media": null
                         }
                     ],
                     "score": 0,
-                    "label": "<p>Aristocracy</p>",
+                    "label": "Aristocracy",
                     "media": null,
-                    "value": 1,
+                    "value": "B",
                     "isCorrect": 0
                 },
                 {
                     "feedback": [
                         {
-                            "text": "<p>Think again. Nepal was not a democracy before 2008.&nbsp;</p>",
+                            "text": "Think again. Nepal was not a democracy before 2008.",
                             "media": null
                         }
                     ],
                     "score": 0,
-                    "label": "<p>Democracy</p>",
+                    "label": "Democracy",
                     "media": null,
-                    "value": 2,
+                    "value": "C",
                     "isCorrect": 0
                 },
                 {
                     "feedback": [
                         {
-                            "text": "<p>Before 2008, Nepal was a monarchy wherein the power of the state lies in the hand of one person.</p>",
+                            "text": "Before 2008, Nepal was a monarchy wherein the power of the state lies in the hand of one person",
                             "media": null
                         }
                     ],
-                    "score": 1,
-                    "label": "<p>Monarchy&nbsp;</p>",
+                    "score": 20,
+                    "label": "Monarchy",
                     "media": null,
-                    "value": 3,
+                    "value": "D",
                     "isCorrect": 1
                 }
             ],
@@ -205,7 +205,7 @@
         },
         "solution": {
             "data": [],
-            "answer": "<p>Before 2008, Nepal was a monarchy wherein the power of the state lies in the hand of one person.</p>",
+            "answer": "Before 2008, Nepal was a monarchy wherein the power of the state lies in the hand of one person.",
             "step_nav": false,
             "type": "Solution"
         },

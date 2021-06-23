@@ -1,7 +1,10 @@
 import 'dart:async';
-import 'package:edgeclass/Constants/video_player/durationConvert.dart';
+import 'package:edgeclass/Database/topics.dart';
+import 'package:edgeclass/Database/userlog.dart';
 import 'package:edgeclass/constants/router.dart';
-import 'package:edgeclass/screens/QuizPage/quizHome.dart';
+import 'package:edgeclass/constants/sharedPrefs.dart';
+import 'package:edgeclass/constants/video_player/durationConvert.dart';
+import 'package:edgeclass/screens/QuizPage/quizHandler.dart';
 import 'package:edgeclass/screens/VideoPage/showNotes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -11,9 +14,10 @@ import '../data.dart';
 import 'overlay.dart';
 
 class VlcPlayerWithControls extends StatefulWidget {
+  final int index;
   final String fileName;
 
-  VlcPlayerWithControls({@required this.fileName});
+  VlcPlayerWithControls({@required this.fileName, @required this.index});
 
   @override
   VlcPlayerWithControlsState createState() => VlcPlayerWithControlsState();
@@ -34,6 +38,7 @@ class VlcPlayerWithControlsState extends State<VlcPlayerWithControls>
   int numberOfAudioTracks = 0;
   bool validPosition = false;
   bool showPlaybackSppeed = false;
+  bool sharedPrefSeeker = true;
 
   //
   List<double> playbackSpeeds = [0.5, 1.0, 2.0];
@@ -50,6 +55,9 @@ class VlcPlayerWithControlsState extends State<VlcPlayerWithControls>
 
   @override
   void dispose() {
+    userLog["topic"][widget.index]["${listTopics[widget.index]["topic"]}"]
+        ["videoWatched"] = vlcPlayedPosition.toString();
+    saveCredentials();
     vlcGlobalcontroller.removeListener(listener);
     super.dispose();
   }
@@ -76,7 +84,12 @@ class VlcPlayerWithControlsState extends State<VlcPlayerWithControls>
 
 //logic for hadling the route on end of the video
       if (vlcGlobalcontroller.value.isEnded) {
-        routeTo(context, QuixHome());
+        routeTo(
+            context,
+            QuizHandler(
+              fromSharedPrefs: true,
+              index: widget.index,
+            ));
       }
       if (oPosition != null && oDuration != null) {
         if (oDuration.inHours == 0) {
@@ -93,11 +106,26 @@ class VlcPlayerWithControlsState extends State<VlcPlayerWithControls>
         validPosition = oDuration.compareTo(oPosition) >= 0;
         sliderValue = validPosition ? oPosition.inSeconds.toDouble() : 0;
       }
-      numberOfCaptions = vlcGlobalcontroller.value.spuTracksCount;
-      numberOfAudioTracks = vlcGlobalcontroller.value.audioTracksCount;
+//checkign dsharedPref then seeking for cache (state)
+      if (sharedPrefSeeker && vlcPlayedPosition.inSeconds == 1) {
+        await seekIfPossible();
+      }
+      // numberOfCaptions = vlcGlobalcontroller.value.spuTracksCount;
+      // numberOfAudioTracks = vlcGlobalcontroller.value.audioTracksCount;
 
       //
       setState(() {});
+    }
+  }
+
+  seekIfPossible() async {
+    if (userLog["topic"][widget.index]["${listTopics[widget.index]["topic"]}"]
+            ["videoWatched"] !=
+        "") {
+      await vlcGlobalcontroller.seekTo(parseDuration(userLog["topic"]
+              [widget.index]["${listTopics[widget.index]["topic"]}"]
+          ["videoWatched"]));
+      sharedPrefSeeker = false;
     }
   }
 
@@ -183,17 +211,7 @@ class VlcPlayerWithControlsState extends State<VlcPlayerWithControls>
 //play, pause, and seek for 10 sec
             ControlsOverlay(),
 
-//playback speeed action
-            Positioned(
-              top: 0,
-              right: 0,
-              child: IconButton(
-                  icon: Icon(
-                    MaterialCommunityIcons.play_speed,
-                    color: Colors.white,
-                  ),
-                  onPressed: _cyclePlaybackSpeed),
-            ),
+
 
 //fulScreen action
             Positioned(
@@ -207,6 +225,18 @@ class VlcPlayerWithControlsState extends State<VlcPlayerWithControls>
                   onPressed: () async {
                     // await vlcGlobalcontroller.options.adv
                   }),
+            ),
+
+//playback speeed action
+            Positioned(
+              top: 0,
+              right: 0,
+              child: IconButton(
+                  icon: Icon(
+                    MaterialCommunityIcons.play_speed,
+                    color: Colors.white,
+                  ),
+                  onPressed: _cyclePlaybackSpeed),
             ),
           ],
         ),

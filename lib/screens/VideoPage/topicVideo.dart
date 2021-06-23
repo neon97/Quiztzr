@@ -1,9 +1,12 @@
+import 'package:edgeclass/Database/Sqlite/dummyInsert.dart';
 import 'package:edgeclass/Database/topics.dart';
+import 'package:edgeclass/Database/userlog.dart';
 import 'package:edgeclass/Model/notes.dart';
 import 'package:edgeclass/constants/data.dart';
+import 'package:edgeclass/constants/sharedPrefs.dart';
 import 'package:edgeclass/constants/video_player/player.dart';
-import 'package:edgeclass/widgets.dart/appbar.dart';
 import 'package:edgeclass/widgets.dart/appbackground.dart';
+import 'package:edgeclass/widgets.dart/appbar.dart';
 import 'package:flutter/material.dart';
 import 'header.dart';
 import 'overview.dart';
@@ -21,25 +24,16 @@ class _TopicVideoPageState extends State<TopicVideoPage> {
   //databse
   List<Notes> noteList = [];
 
-  dummyInsert() async {
-    await databaseHelper.insertNote(Notes(
-        notes:
-            "The first Game that was developed in 1962 was a colorful Blocks game.",
-        duration: Duration(seconds: 4).toString()));
-    await databaseHelper.insertNote(Notes(
-        notes:
-            "This following game was developed by Charle Henry and Edward Frendz",
-        duration: Duration(seconds: 10).toString()));
-    await databaseHelper.insertNote(Notes(
-        notes:
-            "This was the beginning Era for the games following with Mario, Sonic & other favorable games too.",
-        duration: Duration(seconds: 20).toString()));
-  }
+
 
   @override
   void initState() {
     databaseHelper.initializeDatabase();
-    // dummyInsert();
+    !userLog["topic"][widget.index]["${listTopics[widget.index]["topic"]}"]
+            ["dummyQuestion"]
+        ? dummyInsert(widget.index)
+        : print("");
+
     super.initState();
   }
 
@@ -61,6 +55,7 @@ class _TopicVideoPageState extends State<TopicVideoPage> {
                 // ),
                 Player(
                   fileName: listTopics[widget.index]["video"],
+                  index: widget.index,
                 ),
                 Container(
                   height: deviceHeight - deviceHeight / 2.6,

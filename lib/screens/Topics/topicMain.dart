@@ -1,13 +1,12 @@
 import 'package:edgeclass/Database/topics.dart';
 import 'package:edgeclass/constants/router.dart';
-import 'package:edgeclass/screens/QuizPage/quizHome.dart';
+import 'package:edgeclass/screens/QuizPage/quizHandler.dart';
 import 'package:edgeclass/screens/Topics/topicTile.dart';
-import 'package:edgeclass/screens/videoPage/topicVideo.dart';
+import 'package:edgeclass/screens/VideoPage/topicVideo.dart';
 import 'package:edgeclass/widgets.dart/appbackground.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
 import '../../widgets.dart/appbar.dart';
 
 class TopicMain extends StatefulWidget {
@@ -48,11 +47,11 @@ class _TopicMainState extends State<TopicMain> {
                     return GestureDetector(
                       child: topicTile(_context, index),
                       onTap: () {
-                        routeTo(context, QuixHome()
-                            // TopicVideoPage(
-                            //   index: index,
-                            // )
-                            );
+                        routeTo(
+                            context,
+                            TopicVideoPage(
+                              index: index,
+                            ));
                       },
                     );
                   },

@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:edgeclass/constants/data.dart';
 import 'package:edgeclass/constants/router.dart';
+import 'package:edgeclass/constants/sharedPrefs.dart';
 import 'package:edgeclass/screens/Topics/topicMain.dart';
 import 'package:edgeclass/widgets.dart/appbackground.dart';
 import 'package:flutter/material.dart';
@@ -39,10 +40,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   //function
   _startTimer() async {
+    // saveCredentials();
+    readCredentials();
     Timer(Duration(seconds: 3), _moveToHome);
     listQuestions =
         jsonDecode(await rootBundle.loadString('assets/questions.json'));
-    print(listQuestions);
   }
 
   _moveToHome() {

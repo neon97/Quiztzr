@@ -93,7 +93,7 @@ class DatabaseAssets {
     int count =
         noteMapList.length; // Count the number of map entries in db table
 
-    List<Notes> noteList = List<Notes>();
+    List<Notes> noteList = [];
     // For loop to create a 'Note List' from a 'Map List'
     for (int i = 0; i < count; i++) {
       noteList.add(Notes.fromMapObject(noteMapList[i]));

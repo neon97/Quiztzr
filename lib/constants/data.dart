@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:edgeclass/Database/Sqlite/sql.dart';
 import 'package:edgeclass/Model/notes.dart';
 import 'package:flutter/material.dart';
@@ -17,3 +19,6 @@ Duration vlcPlayedPosition;
 List<Notes> listStopaageDurations = [];
 bool showNoteOnly = true;
 List listQuestions = [];
+
+double clockTimer = 0;
+Timer globalTimer;

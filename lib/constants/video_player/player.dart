@@ -5,8 +5,9 @@ import 'package:flutter_vlc_player/flutter_vlc_player.dart';
 import '../data.dart';
 
 class Player extends StatefulWidget {
+  final int index;
   final String fileName;
-  Player({@required this.fileName});
+  Player({@required this.fileName, @required this.index});
   @override
   _PlayerState createState() => _PlayerState();
 }
@@ -36,6 +37,7 @@ class _PlayerState extends State<Player> {
   Widget build(BuildContext context) {
     return Container(
       child: VlcPlayerWithControls(
+        index: widget.index,
         fileName: widget.fileName,
       ),
     );
