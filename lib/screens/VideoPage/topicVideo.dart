@@ -3,7 +3,6 @@ import 'package:edgeclass/Database/topics.dart';
 import 'package:edgeclass/Database/userlog.dart';
 import 'package:edgeclass/Model/notes.dart';
 import 'package:edgeclass/constants/data.dart';
-import 'package:edgeclass/constants/sharedPrefs.dart';
 import 'package:edgeclass/constants/video_player/player.dart';
 import 'package:edgeclass/widgets.dart/appbackground.dart';
 import 'package:edgeclass/widgets.dart/appbar.dart';
